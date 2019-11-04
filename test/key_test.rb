@@ -15,14 +15,14 @@ class KeyTest < Minitest::Test
   end
 
   def test_it_can_get_split_key
-    skip
-    assert_equal [02, 27, 71, 15], @key.seprarate
+    key = "02715"
+    assert_equal ["02", "27", "71", "15"], @key.separate(key)
   end
 
   def test_it_can_pair_key_to_number
-    skip
-    expected = {A: 02, B: 27, C: 71, D: 15}
-    assert_equal expected, @key.pair_keys
+      key = "02715"
+    expected = {"A" => 02, "B"=> 27, "C"=> 71, "D"=> 15}
+    assert_equal expected, @key.pair_keys(key)
   end
 
   # def test_it_can_get_five_digit
