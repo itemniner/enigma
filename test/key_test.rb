@@ -9,9 +9,20 @@ class KeyTest < Minitest::Test
   def setup
     @key = "02715"
   end
+
+  def test_it_can_generate_random_key
+    key = stubs[:generate_random_five_digit]
+    assert_equal "01234", @key.generate_random_five_digit
+  end
   def test_it_can_get_split_key
     assert_equal [02, 27, 71, 15], @key.seprarate
   end
+
+  def test_it_can_pair_key_to_number
+    expected = {A: 02, B: 27, C: 71, D: 15}
+    assert_equal expected, @key.pair_keys
+  end
+
   # def test_it_can_get_five_digit
   #   assert_equal 5, @key.random_five_digit
   # end
