@@ -24,16 +24,11 @@ class KeyTest < Minitest::Test
     expected = {"A" => 02, "B"=> 27, "C"=> 71, "D"=> 15}
     assert_equal expected, @key.pair_keys(key)
   end
-
   # def test_it_can_get_five_digit
   #   assert_equal 5, @key.random_five_digit
   # end
   # def test_it_can_grab_random_five_number
   #   key.stubs(:get_five_numbers).returns("59376")
   #   assert_equal "59376", @key.get_five_numbers
-  # end
-  #
-  # def test_it_can_turn_to_key
-  #     key.stubs(:generate_key).returns("")
   # end
 end
