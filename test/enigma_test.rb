@@ -1,19 +1,21 @@
-require 'minitest/autorun'
-require 'minitest/pride'
-require './lib/enigma'
-require './lib/offset'
-require './lib/key'
+require_relative 'test_helper'
 
 #takes in key,date,message
 
 class EnigmaTest < Minitest::Test
 
   def setup
-    @enigma = Enigma.new("hello world!", "02715", "040895")
+    @enigma = Enigma.new
+  end
+
+  def test_it_exist
+    skip
+    assert_instance Engima, @enigma.encrypt("hello world", "02715", "040895")
   end
 
 
   def test_it_can_get_encryption
+    skip
     assert_equal "keder ohulw", @enigma.encrypt[:encryption]
   end
 
