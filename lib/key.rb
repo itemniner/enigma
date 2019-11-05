@@ -10,13 +10,12 @@ class Key
   end
 
   def pair_keys(key)
-    red = {}
-    blue = separate(key)
-    var = ("A".."D").to_a
-    var.each_with_index do |letter, index|
-      red[letter] = blue[index].to_i
+    shift_value = {}
+    letters = separate(key)
+    char = ("A".."D").to_a
+    char.each_with_index do |letter, index|
+      shift_value[letter] = letters[index].to_i
     end
-    red
+    shift_value
   end
-
 end
