@@ -7,7 +7,7 @@ class OffsetTest < Minitest::Test
   end
 
   def test_it_can_retrieve_todays_date
-    assert_equal 51119, @offset.todays_date
+    assert_equal Time.now.strftime("%d%m%y").to_i, @offset.todays_date
   end
 
   def test_it_can_square_the_date
@@ -25,7 +25,4 @@ class OffsetTest < Minitest::Test
     expected = {"A" => 2, "B"=> 1, "C"=> 6, "D"=> 1}
     assert_equal expected, @offset.pair_keys(date)
   end
-  #takes in the date
-  #multiple that by it self
-  #grabs the last 4 numbers of that
 end
