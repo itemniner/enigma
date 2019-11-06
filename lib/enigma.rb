@@ -10,4 +10,11 @@ class Enigma
   def get_hashes(key, date)
     [Key.new.pair_keys(key), Offset.new.pair_keys(date.to_i)]
   end
+
+  def decrypt(message, key, date)
+  hashes = get_hashes(key,date)
+  {decryption: Shift.new.negative_shift_characters(message, hashes[0], hashes[1]),
+     key: key,
+    date: date }
+  end
 end
