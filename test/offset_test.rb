@@ -7,7 +7,7 @@ class OffsetTest < Minitest::Test
   end
 
   def test_it_can_retrieve_todays_date
-    assert_equal Time.now.strftime("%d%m%y").to_i, @offset.todays_date
+    assert_equal Time.now.strftime("%d%m%y"), @offset.todays_date
   end
 
   def test_it_can_square_the_date
