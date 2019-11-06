@@ -10,7 +10,7 @@ require './lib/offset'
 messages = File.open(message, "r")
 
 encrypted = File.open(where, "w")
-encrypted_message = Enigma.new.encrypt(messages.read.chomp)
+encrypted_message = Enigma.new.encrypt(messages.read.chomp, "48070")
 encrypted.write(encrypted_message[:encryption])
 encrypted.close
 
