@@ -1,6 +1,7 @@
 require_relative 'test_helper'
 
 class KeyTest < Minitest::Test
+  
   def setup
     @key = Key.new
   end

@@ -3,9 +3,7 @@ require './lib/shift'
 require './lib/key'
 require './lib/offset'
 
-
 (encrypted_message, where)= ARGV
-
 
 encrypted_messages = File.open(encrypted_message, "r")
 
