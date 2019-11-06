@@ -1,7 +1,7 @@
 class Offset
 
   def todays_date
-    Time.now.strftime("%d%m%y").to_i
+    Time.now.strftime("%d%m%y")
   end
 
   def square_date(date)
