@@ -22,4 +22,13 @@ class Shift
       alphabet.rotate(letter_index + current_key(values)).first
     end.join
   end
+
+  def negative_shift_characters(message, key, offset)
+    values = shift_value(key, offset).values
+    alphabet = ("a".."z").to_a << " "
+    message.downcase.chars.map do |letter|
+      letter_index = alphabet.index(letter)
+      alphabet.rotate(letter_index - current_key(values)).first
+    end.join
+  end
 end
