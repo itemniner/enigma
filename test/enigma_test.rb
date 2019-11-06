@@ -7,23 +7,24 @@ class EnigmaTest < Minitest::Test
   end
 
   def test_it_exist
-    skip
-    assert_instance Engima, @enigma
+    assert_instance_of Enigma, @enigma
   end
 
-
-  def test_it_can_get_encryption
-    skip
-    assert_equal "keder ohulw", @enigma.encrypt[:encryption]
+  def test_it_can_encrypt
+    expected =  {
+                  encryption: "keder ohulw",
+                  key: "02715",
+                  date: "040895"
+                  }
+    assert_equal expected, @enigma.encrypt("hello world", "02715", "040895")
   end
 
-  def test_it_can_get_key
-    skip
-    assert_equal "02715", @enigma.encrypt[:key]
-  end
-
-  def test_it_can_get_date
-    skip
-    assert_equal "040895", @engima.encrypt[:date]
+  def test_it_can_decrypt
+    expected =  {
+                  decryption: "hello world",
+                  key: "02715",
+                  date: "040895"
+                  }
+    assert_equal expected, @enigma.decrypt("keder ohulw", "02715", "040895")
   end
 end
