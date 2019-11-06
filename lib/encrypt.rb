@@ -6,7 +6,6 @@ require './lib/offset'
 
 (message, where)= ARGV
 
-
 messages = File.open(message, "r")
 
 encrypted = File.open(where, "w")

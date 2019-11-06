@@ -1,4 +1,5 @@
 class Key
+  
   def generate_random_key
     rand.to_s[2..6]
   end
