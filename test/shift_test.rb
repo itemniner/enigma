@@ -12,4 +12,10 @@ class ShiftTest < Minitest::Test
     expected = {"A" => 04, "B"=> 28, "C"=> 77, "D"=> 16}
     assert_equal expected, @shift.shift_value(key, offset)
   end
+
+  def test_it_can_shift_keys
+    key = {"A" => 02, "B"=> 27, "C"=> 71, "D"=> 15}
+    offset = {"A" => 1, "B"=> 0, "C"=> 2, "D"=> 5}
+    assert_equal "keder ohulw", @shift.shift_characters("hello world", key, offset)
+  end
 end
