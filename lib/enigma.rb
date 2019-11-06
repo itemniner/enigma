@@ -2,9 +2,9 @@ class Enigma
 
   def encrypt(message, key, date)
     hashes = get_hashes(key,date)
-    {encryption: Shift.new.shift_characters(message, hashes[0], hashes[1]),
+      {encryption: Shift.new.shift_characters(message, hashes[0], hashes[1]),
        key: key,
-      date: date }
+       date: date }
   end
 
   def get_hashes(key, date)
@@ -12,9 +12,9 @@ class Enigma
   end
 
   def decrypt(message, key, date)
-  hashes = get_hashes(key,date)
-  {decryption: Shift.new.negative_shift_characters(message, hashes[0], hashes[1]),
-     key: key,
-    date: date }
+    hashes = get_hashes(key,date)
+      {decryption: Shift.new.negative_shift_characters(message, hashes[0], hashes[1]),
+       key: key,
+       date: date }
   end
 end
